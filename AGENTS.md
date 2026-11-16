@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules (My Love)
+- Photo persistence goes through the `PhotoRepository` interface in `src/lib/photo-store/` (local IndexedDB when signed out, Lovable Cloud table `photos` + private bucket `love-photos` when signed in) so the UI never talks to storage directly.
+- Cloud photo files live under `<user_id>/...` in the private bucket and are shown via signed URLs; RLS scopes rows and files to the owner.
+- Background music is produced by `src/lib/lofi-engine.ts` (Web Audio synth) unless a real file URL is set in `src/config/media.ts`; audio/video starts only from a user gesture because browsers block autoplay.
+- Replaceable media (viewer video path, music sources) is configured only in `src/config/media.ts`.
+- Time/calendar/password/backup rules are pure functions in `src/lib/` with tests in `src/test/` so they stay verifiable.
