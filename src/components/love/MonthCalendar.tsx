@@ -39,24 +39,24 @@ export function MonthCalendar() {
         <span>📅 {grid.label}</span>
         <span className="text-[11px] font-semibold text-love">Kỷ niệm ngày 27 ❤️</span>
       </div>
-      <div role="grid" className="grid grid-cols-7 gap-1 text-center text-[11px]">
-        <div role="row" className="contents">
+      <p className="sr-only">
+        Hôm nay là {today.toLocaleDateString("vi-VN", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}.
+      </p>
+      <div aria-hidden="true" className="grid grid-cols-7 gap-1 text-center text-[11px]">
+        <div className="contents">
           {WEEKDAY_LABELS.map((d) => (
-            <div key={d} role="columnheader" className="pb-1 font-semibold text-muted-foreground">
+            <div key={d} className="pb-1 font-semibold text-muted-foreground">
               {d}
             </div>
           ))}
         </div>
-        <div role="row" className="contents">
+        <div className="contents">
           {grid.cells.map((c, i) =>
             c.day === null ? (
-              <div key={`b${i}`} role="gridcell" aria-hidden="true" />
+              <div key={`b${i}`} />
             ) : (
               <div
                 key={c.day}
-                role="gridcell"
-                aria-current={c.isToday ? "date" : undefined}
-                aria-label={`${c.day}${c.isToday ? ", hôm nay" : ""}${c.isAnniversary ? ", ngày kỷ niệm" : ""}`}
                 className={cn(
                   "relative rounded-md py-1.5",
                   c.isToday ? "border border-sky/40 bg-sky/20 font-bold text-sky" : "bg-day-cell text-day-foreground",
