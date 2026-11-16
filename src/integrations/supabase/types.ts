@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      photos: {
+        Row: {
+          client_id: string
+          created_at: string
+          id: string
+          mime_type: string
+          name: string
+          size: number
+          storage_path: string
+          uploaded_at: string
+          user_id: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string
+          id?: string
+          mime_type?: string
+          name?: string
+          size?: number
+          storage_path: string
+          uploaded_at?: string
+          user_id?: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string
+          id?: string
+          mime_type?: string
+          name?: string
+          size?: number
+          storage_path?: string
+          uploaded_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
