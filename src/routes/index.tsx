@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "My Love — Kho ảnh kỷ niệm & Kỷ niệm tình yêu" },
-      { name: "description", content: "Kho ảnh kỷ niệm dạng cuộn phim theo ngày, đồng hồ thời gian bên nhau từ 27/07/2026 và lịch kỷ niệm ngày 27." },
+      { name: "description", content: "Kho ảnh kỷ niệm dạng cuộn phim theo ngày, đồng hồ thời gian bên nhau từ 27/07/2026 và 26/06 ❤️ 09/11." },
       { property: "og:title", content: "My Love — Kho ảnh kỷ niệm" },
       { property: "og:description", content: "Kho ảnh kỷ niệm của hai đứa mình, đếm từng giây bên nhau từ 27/07/2026." },
       { property: "og:type", content: "website" },
